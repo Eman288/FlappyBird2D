@@ -29,6 +29,11 @@ public class BirdScript : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
+		if (collision.gameObject.tag == "wall")
+        	{
+            	// If it's a wall, do nothing and return early
+            	return;
+       	 	}
 		logic.gameOver();
 		birdIsAlive = false;
 	}
